@@ -1,5 +1,5 @@
 # 🗣️ Language Identification System (Text + Audio) 
-
+ 
 An end-to-end **Indian Language Identification System** that detects language from both **text input** and **spoken audio (.mp3)** using Machine Learning.  
 The system is designed especially for **low-resource Indian languages**, without relying on speech-to-text conversion.
 
