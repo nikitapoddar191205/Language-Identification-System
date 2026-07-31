@@ -4,14 +4,12 @@ import re
 import librosa
 import numpy as np
 
-# ---------------- Page Config ----------------
 st.set_page_config(
     page_title="Indian Language Identifier",
-    page_icon="🗣️",
+    page_icon="",
     layout="centered"
 )
 
-# ---------------- Load Models ----------------
 with open("model/language_model.pkl", "rb") as f:
     text_model = pickle.load(f)
 
@@ -21,7 +19,6 @@ with open("model/vectorizer.pkl", "rb") as f:
 with open("model/audio_language_model.pkl", "rb") as f:
     audio_model = pickle.load(f)
 
-# ---------------- Helpers ----------------
 def clean_text(text):
     text = re.sub(r"[^\w\s]", "", text)
     return text.lower().strip()
@@ -42,13 +39,11 @@ def predict_audio_language(audio_file):
 
     return sorted(zip(langs, probs), key=lambda x: x[1], reverse=True)
 
-# ---------------- UI ----------------
 st.title("🗣️ Indian Language Identification System")
 st.caption("Text + Audio | Low-Resource Indian Languages")
 
-tab1, tab2 = st.tabs(["📝 Text Input", "🎧 Audio Input (.mp3)"])
+tab1, tab2 = st.tabs([" Text Input", "Audio Input (.mp3)"])
 
-# ---------- TEXT ----------
 with tab1:
     text = st.text_area("Enter text")
 
@@ -61,7 +56,6 @@ with tab1:
 
         st.success(f"Detected Language: {results[0][0]}")
 
-# ---------- AUDIO ----------
 with tab2:
     audio_file = st.file_uploader("Upload MP3 audio", type=["mp3"])
 

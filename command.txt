@@ -27,3 +27,6 @@ streamlit run app.py
 cd /Users/sanjay/Downloads/Customer\ Segmentation\ Project
 source .venv/bin/activate
 streamlit run app.py
+
+
+https://language-identification-system.streamlit.app/
